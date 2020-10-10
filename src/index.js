@@ -6,8 +6,8 @@ module.exports = function check(str, bracketsConfig) {
             stack.pop();
         } else if (config.has(i)) {
             stack.push(i);
-            // } else {
-            //     if (i !== config.get(stack.pop())) return false;
+        } else {
+            if (i !== config.get(stack.pop())) return false;
         }
     }
     return stack.length === 0;
